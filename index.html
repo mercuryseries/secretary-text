@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Texte tapé comme une secrétaire !</title>
+		<meta charset="UTF-8" />
+
+		<style>
+			#secretary_text{
+				width: 700px;
+				height: 120px;
+				font-size: 15px;
+				background-color: #000;
+				color: #FFF;
+				padding: 4px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="secretary_text"></div>
+
+
+		<script>
+			var myText = "Nous vous aidons à améliorer votre niveau dans différents domaines à savoir l'informatique, les télécommunications, les mathématiques, la physique, l'électronique... à l'aide de vidéos simples et chirurgicales.";
+
+			var myArray = myText.split("");
+
+			var timeLooper;
+
+			function loop(){
+				if(myArray.length > 0){
+					document.getElementById("secretary_text").innerHTML += myArray.shift(); 
+				} else {
+					clearTimeout(timeLooper);
+				}
+
+				timeLooper = setTimeout('loop()', 70);
+			}
+
+			loop();
+		</script>
+	</body>
+</html>
